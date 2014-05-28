@@ -10,5 +10,5 @@ python:
 
 install: pip install -r requirements.txt
 
-script: time python -m cProfile ./test.py
+script: time python -m cProfile -s time ./test.py
 
