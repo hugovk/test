@@ -1,7 +1,4 @@
 #!/usr/bin/env python
 import sys
-import PySide
-sys.modules['PyQt4'] = PySide
 
-import PySide.QtGui
-from PIL import ImageQt
+print(1)
