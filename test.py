@@ -2,7 +2,7 @@
 
 from PIL import Image
 
-im = Image.open("lena.ppm").convert("I")
+im = Image.open("lena.ppm")
 
 im.point(list(range(256))*3)
 im.point(lambda x: x)
