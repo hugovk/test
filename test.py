@@ -4,4 +4,4 @@ from PIL import Image
 
 im = Image.open("lena.ppm").convert("I")
 
-im.point(lambda x: x*1+1)
+im.point(list(range(256))*256, 'L')
