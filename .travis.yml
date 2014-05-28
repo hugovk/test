@@ -10,8 +10,5 @@ python:
 
 install: pip install -r requirements.txt
 
-script: python ./test.py
+script: time python ./test.py
 
-matrix:
-  allow_failures:
-    - python: 'pypy'
