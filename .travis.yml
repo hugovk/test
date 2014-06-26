@@ -8,7 +8,7 @@ python:
 - '3.3'
 - '3.4'
 
-install: pip install -r requirements.txt
+  - "sudo apt-get install python-qt4"
 
-script: time python -m cProfile -s time ./test.py
+script: python test.py
 
