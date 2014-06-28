@@ -10,6 +10,7 @@ python:
 
 install:
 
+  - time CFLAGS=-O0 pip install lxml
   - time CFLAGS=-O0 pip install diff_cover
 
 #  - time pip install pep8
