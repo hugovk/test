@@ -10,7 +10,7 @@ python:
 
 install:
 
-  - time CFLAGS=-O0 pip install lxml
+  - time pip install lxml
 
   - time pip install pep8
   - time pip install pyflakes
