@@ -8,7 +8,8 @@ python:
 - '3.4'
 - 'pypy'
 
-install: 
+install:
+  - time "./scripts/install-wheels.sh"
   - time pip install pep8
   - time pip install pyflakes
   - time pip install diff_cover
