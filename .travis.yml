@@ -10,11 +10,11 @@ python:
 
 install:
 
-  - time pip install lxml
+  - time CFLAGS=-O0 pip install diff_cover
 
-  - time pip install pep8
-  - time pip install pyflakes
-  - time pip install diff_cover
+#  - time pip install pep8
+#  - time pip install pyflakes
+#  - time pip install diff_cover
 
 script: python ./test.py
 
