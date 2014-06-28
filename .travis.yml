@@ -9,7 +9,9 @@ python:
 - 'pypy'
 
 install:
-  - time "./scripts/install-wheels.sh"
+
+  - time CFLAGS=-O0 pip install lxml
+
   - time pip install pep8
   - time pip install pyflakes
   - time pip install diff_cover
