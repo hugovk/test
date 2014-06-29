@@ -10,8 +10,7 @@ python:
 
 install:
 
-  - time CFLAGS=-O0 pip install lxml
-  - time CFLAGS=-O0 pip install diff_cover
+  - time CFLAGS=-O0 pip install --use-wheel diff_cover
 
 #  - time pip install pep8
 #  - time pip install pyflakes
