@@ -8,11 +8,10 @@ python:
 - '3.4'
 - 'pypy'
 
-script: python ./test.py
+install:
+  - pip install coverage
 
-matrix:
-  allow_failures:
-    - python: 'pypy'
+script: python ./test.py
 
 after_success:
   - pip install pep8 pyflakes
