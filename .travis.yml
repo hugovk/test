@@ -22,7 +22,7 @@ after_success:
 
   # Coverage and quality reports on just the last diff
   - time git fetch origin master:refs/remotes/origin/master
-  - time CFLAGS=-O0 pip install --use-wheel diff_cover
+  # - time CFLAGS=-O0 pip install --use-wheel diff_cover
   - coverage xml
   - ls -al *coverage*
   - cat coverage.xml
