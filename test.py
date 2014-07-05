@@ -1,6 +1,3 @@
 #!/usr/bin/env python
-import os
-import sys
+from PIL import ImageGrab
 
-print(sys.platform)
-print(os.environ.get("XDG_DATA_DIRS"))
