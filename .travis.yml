@@ -9,10 +9,7 @@ python:
 - 'pypy'
 
 install:
-  - time "./scripts/install-wheels.sh"
-  - time pip install pep8
-  - time pip install pyflakes
-  - time pip install diff_cover
+  - time pip install pillow
 
 script: python ./test.py
 
