@@ -1,3 +1,2 @@
 #!/usr/bin/env python
-from PIL import ImageGrab
-
+from PIL import ImageWin
