@@ -1,2 +1,2 @@
 #!/usr/bin/env python
-from PIL import ImageWin
+print(123)
