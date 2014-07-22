@@ -9,6 +9,7 @@ python:
 - 'pypy'
 
 install:
+  - "time sudo apt-get -qq install python-qt4"
   - time pip install pillow
 
 script: python ./test.py
