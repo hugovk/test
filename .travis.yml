@@ -10,7 +10,7 @@ python:
 - '3.4'
 
 install:
-  - "echo $TRAVIS_PYTHON_VERSION"
+  - "pip install pillow"
 
 script:
   - python ./test.py
