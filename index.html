@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Meowifier</title>
+    <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content=
+    "Convert any text to meows or nos, keeping capitalization and punctuation intact."
+    name="description">
+    <meta content="Tim Tate" name=
+    "author">
+    <link href="http://cdn.foundation5.zurb.com/foundation.css" rel=
+    "stylesheet">
+</head>
+
+<body>
+    <nav class="top-bar" data-topbar="">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">The Meowifier</a></h1>
+            </li>
+        </ul>
+    </nav>
+    <a href="https://github.com/timtate/meow.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    <br>
+    <div class="row">
+        <div class="large-12 columns text-center">
+        <h4>Convert any text to meows or nos, keeping capitalization and punctuation intact.</h4>
+        <a href="https://github.com/timtate/meow.js/blob/gh-pages/jnglb10.txt">Here's The Jungle Book</a>, for some sample text to try out.
+        <br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            <div class="panel">
+                <h5>Input Text</h5>
+                <textarea id="inputText" rows="10" class="radius">
+The tiger's roar filled the cave with thunder.  Mother Wolf shook herself clear of the cubs and sprang forward, her eyes, like two green moons in the darkness, facing the blazing eyes of Shere Khan.
+
+"And it is I, Raksha [The Demon], who answers.  The man's cub is mine, Lungri--mine to me!  He shall not be killed.  He shall live to run with the Pack and to hunt with the Pack; and in the end, look you, hunter of little naked cubs--frog-eater--fish-killer--he shall hunt thee!  Now get hence, or by the Sambhur that I killed (I eat no starved cattle), back thou goest to thy mother, burned beast of the jungle, lamer than ever thou camest into the world!  Go!"
+                </textarea>
+            </div>
+        </div>
+
+        <div class="large-6 columns">
+            <div class="panel">
+                <h5>Output Text</h5>
+                <textarea id="outputText" rows="10" class="radius"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            <button id="meowButton" type="button" class="radius">Meow It!</button>
+            <button id="nopeButton" type="button" class="radius">Nope It!</button>
+        </div>
+    </div>
+
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr>
+
+            <div class="row">
+                <div class="large-6 columns">
+                    <p>Made by <a href="http://www.timtate.com">Tim Tate</a>, based on <a href="https://github.com/hugovk/meow.py">meow.py</a> by hugovk</p>
+                </div>
+
+                <div class="large-6 columns">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="http://cdn.foundation5.zurb.com/foundation.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="common.js"></script>
+    <script src="meow.js"></script>
+    <script src="nope.js"></script>
+    <script>
+        $(document).foundation();
+        var doc = document.documentElement;
+        doc.setAttribute('data-useragent', navigator.userAgent);
+        $(function(){
+            $("#meowButton").on('click', function(event){
+                var input = $("#inputText").val();
+                $("#outputText").val(meowify(input));
+            })
+
+            $("#nopeButton").on('click', function(event){
+                var input = $("#inputText").val();
+                $("#outputText").val(nopify(input));
+            })
+
+        });
+    </script>
+</body>
+</html>
