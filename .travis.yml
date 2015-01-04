@@ -11,6 +11,8 @@ python:
 
 install:
   - "echo $TRAVIS_PYTHON_VERSION"
+  - "echo $TRAVIS_BRANCH"
+  - "echo $USER"
 
 script:
   - python ./test.py
