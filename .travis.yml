@@ -13,6 +13,7 @@ install:
   - "echo $TRAVIS_PYTHON_VERSION"
   - "echo $TRAVIS_BRANCH"
   - "echo $USER"
+  - "echo $TRAVIS_REPO_SLUG"
 
 script:
   - python ./test.py
