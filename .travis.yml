@@ -14,7 +14,8 @@ install:
   - "echo $TRAVIS_BRANCH"
   - "echo $USER"
   - "echo $TRAVIS_REPO_SLUG"
-  -  if [ "$TRAVIS_REPO_SLUG" = "hugovk/test" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
+  - |
+     if [ "$TRAVIS_REPO_SLUG" = "hugovk/test" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
       echo "do something"
      fi
 
