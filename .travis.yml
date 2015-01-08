@@ -21,3 +21,4 @@ install:
 
 script:
   - python ./test.py
+  - grep tinylittleneedle test.py # shouldn't be found, will return 1 and error
