@@ -10,7 +10,7 @@ python:
 - '3.4'
 
 install:
-  - time pip install setuptools
+  - time pip install docutils
   - "echo $TRAVIS_PYTHON_VERSION"
 
 script:
