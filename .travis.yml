@@ -10,7 +10,7 @@ python:
 - '3.4'
 
 install:
-  - time pip install pyroma
+  - time pip install setuptools
   - "echo $TRAVIS_PYTHON_VERSION"
 
 script:
