@@ -11,7 +11,8 @@ python:
 
 install:
   - time pip install --upgrade pip
-  - time pip install docutils
+#  - time pip install docutils
+  - pip install git+git://github.com/docutils-mirror/docutils.git
   - "echo $TRAVIS_PYTHON_VERSION"
 
 script:
