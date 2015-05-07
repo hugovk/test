@@ -13,8 +13,7 @@ sudo: false
 
 install:
   - time pip install --upgrade pip
-  - time pip install docutils
-#  - pip install git+git://github.com/hugovk/docutils.git@parallel-2to3
+  - time pip install pyroma
   - "echo $TRAVIS_PYTHON_VERSION"
 
 script:
