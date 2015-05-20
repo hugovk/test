@@ -1,4 +1,4 @@
 #!/usr/bin/env python
-import docutils
+import diff_cover
 print(123)
-print(docutils.__version__)
+print(diff_cover.VERSION)
