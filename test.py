@@ -1,4 +1,6 @@
 #!/usr/bin/env python
-import docutils
+import os
 print(123)
-print(docutils.__version__)
+
+print(os.environ['MY_VAR'])
+

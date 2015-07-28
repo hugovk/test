@@ -12,8 +12,6 @@ python:
 sudo: false
 
 install:
-  - time pip install --upgrade pip
-  - time pip install pyroma
   - "echo $TRAVIS_PYTHON_VERSION"
 
 script:
