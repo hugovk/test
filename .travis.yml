@@ -9,7 +9,7 @@ python:
 - '2.7'
 - 'pypy'
 
-sudo: false
+#sudo: false
 
 install:
   - "echo $TRAVIS_PYTHON_VERSION"
