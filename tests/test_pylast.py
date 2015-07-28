@@ -21,28 +21,10 @@ def load_secrets():
     else:
         doc = {}
         try:
-            doc["username"] = os.environ['PYLAST_USERNAME'].strip()
+            doc["my_var"] = os.environ['MY_VAR'].strip()
         except KeyError:
-            print("username")
-        try:
-            doc["password_hash"] = os.environ['PYLAST_PASSWORD_HASH'].strip()
-        except KeyError:
-            print("hash")
-        try:
-            doc["api_key"] = os.environ['PYLAST_API_KEY'].strip()
-        except KeyError:
-            print("key")
-        try:
-            doc["api_secret"] = os.environ['PYLAST_API_SECRET'].strip()
-        except KeyError:
-            print("secret")
-        try:
-            doc["username"] = os.environ['PYLAST_USERNAME'].strip()
-            doc["password_hash"] = os.environ['PYLAST_PASSWORD_HASH'].strip()
-            doc["api_key"] = os.environ['PYLAST_API_KEY'].strip()
-            doc["api_secret"] = os.environ['PYLAST_API_SECRET'].strip()
-        except KeyError:
-            pytest.skip("Missing environment variables: PYLAST_USERNAME etc.")
+            print("my_var")
+            pytest.skip("Missing environment variables: MY_VAR etc.")
     return doc
 
 
@@ -58,18 +40,12 @@ class TestPyLast(unittest.TestCase):
         if self.__class__.secrets is None:
             self.__class__.secrets = load_secrets()
 
-        self.username = self.__class__.secrets["username"]
-        password_hash = self.__class__.secrets["password_hash"]
-
-        API_KEY = self.__class__.secrets["api_key"]
-        API_SECRET = self.__class__.secrets["api_secret"]
-
-#         self.network = pylast.LastFMNetwork(
-#             api_key=API_KEY, api_secret=API_SECRET,
-#             username=self.username, password_hash=password_hash)
+        MY_VAR = self.__class__.secrets["my_var"]
 
     def test_pass(self):
+        print(MY_VAR)
         self.assertEqual(1, 1)
+        self.assertEqual(MY_VAR, "this_is_my_var")
 
 
 if __name__ == '__main__':
