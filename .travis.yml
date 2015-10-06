@@ -11,7 +11,7 @@ python:
 - '3.5'
 
 install:
-  - "pip install pillow==2.9.0 django"
+  - "pip install pillow==2.7.0 django"
   - wget https://cloud.githubusercontent.com/assets/1551551/10288677/a5311cc2-6b57-11e5-8313-a4b8dafb3e00.png -O test-placeholder.png
 
 script:
