@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 
 from PIL import ImageFile as PillowImageFile
+
+print(PillowImageFile)
+PillowImageFile.LOAD_TRUNCATED_IMAGES = True
+print(PillowImageFile)
+
 import zlib
 
 def get_image_dimensions(file_or_path, close=False):
