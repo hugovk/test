@@ -2,9 +2,9 @@
 
 from PIL import ImageFile as PillowImageFile
 
-print(PillowImageFile)
+print(PillowImageFile.LOAD_TRUNCATED_IMAGES)
 PillowImageFile.LOAD_TRUNCATED_IMAGES = True
-print(PillowImageFile)
+print(PillowImageFile.LOAD_TRUNCATED_IMAGES)
 
 import zlib
 
