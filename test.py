@@ -43,6 +43,6 @@ def get_image_dimensions(file_or_path, close=False):
 
 size = get_image_dimensions('test-placeholder.png')
 print(size)
-assert(im.height == (23, 22))
+assert(size == (23, 22))
 
 
