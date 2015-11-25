@@ -12,7 +12,6 @@ python:
 
 install:
   - sudo apt-get install unrar
-  - cp rar unrar /usr/local/bin
   - "pip install pillow"
   - wget http://www.zfight.com/misc/files/textures/envmap_grimmnight.rar
   - unrar x envmap_grimmnight.rar
