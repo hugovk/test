@@ -1,44 +1,23 @@
 #!/usr/bin/env python
 
-from PIL import ImageFile as PillowImageFile
+from PIL import Image, PILLOW_VERSION
+import sys
 
-import zlib
+print("Python version:", sys.version)
+print("PILLOW_VERSION:", PILLOW_VERSION)
 
-def get_image_dimensions(file_or_path, close=False):
-    p = PillowImageFile.Parser()
+files = [
+    "grimmnight_bk.tga",
+    "grimmnight_ft.tga",
+    "grimmnight_rt.tga",
+    "grimmnight_dn.tga",
+    "grimmnight_lf.tga",
+    "grimmnight_up.tga"]
 
-    if hasattr(file_or_path, 'read'):
-        file = file_or_path
-        file_pos = file.tell()
-        file.seek(0)
-    else:
-        file = open(file_or_path, 'rb')
-        close = True
-
-    # Most of the time Pillow only needs a small chunk to parse the image
-    # and get the dimensions, but with some TIFF files Pillow needs to
-    # parse the whole file.
-    chunk_size = 1024
-    while 1:
-        data = file.read(chunk_size)
-        if not data:
-            break
-        try:
-            p.feed(data)
-        except zlib.error as e:
-            # ignore zlib complaining on truncated stream, just feed more
-            # data to parser (ticket #19457).
-            if e.args[0].startswith("Error -5"):
-                pass
-            else:
-                raise
-        if p.image:
-            return p.image.size
-        chunk_size *= 2
-    return None
-
-size = get_image_dimensions('test-placeholder.png')
-print(size)
-assert(size == (23, 22))
+for f in files:
+    print(f)
+    im = Image.open(f)
+    im.load()
+    print(im)
 
 
