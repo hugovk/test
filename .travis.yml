@@ -10,6 +10,9 @@ python:
 - '3.4'
 - '3.5'
 
+# Use container-based infrastructure
+sudo: false
+
 install:
   - "pip install pillow"
 
