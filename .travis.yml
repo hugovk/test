@@ -12,7 +12,7 @@ python:
 
 install:
   - "echo $TRAVIS_PYTHON_VERSION"
-  - pip install pyaml
+  - pip install pyyaml
 
 script:
   - python ./test.py
