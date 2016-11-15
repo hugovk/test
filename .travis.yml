@@ -2,6 +2,7 @@ language: python
 
 python:
 - 'pypy'
+- 'pypy2'
 - 'pypy3'
 - 'pypy-5.3.1'
 - '2.6'
