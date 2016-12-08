@@ -26,12 +26,8 @@ install:
      if [ "$TRAVIS_REPO_SLUG" = "hugovk/test" ] && [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
       echo "do something..."
      fi
+  - pip install setuptools
 
 script:
   - python ./test.py
 
-after_script:
-  - echo "Clones detected" | grep -E "Clones detected\|lines are duplicates"
-  - echo "Clones detected" | grep -E "Clones detected|lines are duplicates"
-  - echo "Clones detected" | grep -e "Clones detected\|lines are duplicates"
-  - echo "Clones detected" | grep -e "Clones detected|lines are duplicates"
