@@ -21,7 +21,7 @@ addons:
   - nginx
 
 install:
-  - pip install lxml
+  - CFLAGS="-O0" pip install lxml
   - "echo $TRAVIS_PYTHON_VERSION"
   - "echo $TRAVIS_BRANCH"
   - "echo $USER"
