@@ -2,14 +2,14 @@
 build: false
 environment:
   matrix:
-    - PYTHON: "C:/Python27"
     - PYTHON: "C:/Python36"
+    - PYTHON: "C:/Python27"
 init:
   - "ECHO %PYTHON%"
   - ps: "ls C:/Python*"
 install:
   - "%PYTHON%/python.exe -m pip install -U pip setuptools"
-  - "%PYTHON%/Scripts/pip.exe install -pillow"
+  - "%PYTHON%/Scripts/pip.exe install pillow"
 
 test_script:
   - "python.exe test.py"
