@@ -12,7 +12,7 @@ init:
   - ps: "ls C:/Python*"
 install:
   - "%PYTHON%/python.exe -m pip install -U pip setuptools"
-  - "%PYTHON%/Scripts/pip.exe install pillow==3.9.0"
+  - "%PYTHON%/Scripts/pip.exe install "pillow<4.0.0" -vvv"
   - "%PYTHON%/Scripts/pip.exe freeze"
 
 test_script:
