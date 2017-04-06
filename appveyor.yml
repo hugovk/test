@@ -25,6 +25,7 @@ install:
 
   - ps: "ls C:/Python36-x64"
   - ps: "ls C:/Python36-x64/lib/site-packages"
+  - ps: "ls C:/Python36-x64/lib/site-packages/PIL"
 
 
 test_script:
