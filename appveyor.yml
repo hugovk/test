@@ -21,6 +21,11 @@ install:
   - "%PYTHON%/python.exe -m pip install -U pip setuptools"
   - "%PYTHON%/Scripts/pip.exe install pillow -vvv"
   - "%PYTHON%/Scripts/pip.exe freeze"
+  - "%PYTHON%/Scripts/pip.exe list --format==columns"
+
+  - ps: "ls C:/Python36-x64"
+  - ps: "ls C:/Python36-x64/lib/site-packages"
+
 
 test_script:
   - "python.exe test.py"
