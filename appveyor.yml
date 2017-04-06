@@ -15,8 +15,8 @@ environment:
 init:
   - "ECHO %PYTHON%"
   - ps: "ls C:/Python*"
-  - ps: "ls %PYTHON%/"
-  - ps: "ls %PYTHON%/lib/site-packages"
+  - ps: "ls C:/%PYTHON%/"
+  - ps: "ls C:/%PYTHON%/lib/site-packages"
 install:
   - "%PYTHON%/python.exe -m pip install -U pip setuptools"
   - "%PYTHON%/Scripts/pip.exe install pillow -vvv"
