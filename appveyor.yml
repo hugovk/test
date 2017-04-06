@@ -2,17 +2,24 @@
 build: false
 environment:
   matrix:
-    - PYTHON: "C:/Python33"
-    - PYTHON: "C:/Python34"
-    - PYTHON: "C:/Python35"
+    - PYTHON: "C:/Python36-x64"
     - PYTHON: "C:/Python36"
+    - PYTHON: "C:/Python35-x64"
+    - PYTHON: "C:/Python35"
+    - PYTHON: "C:/Python34-x64"
+    - PYTHON: "C:/Python34"
+    - PYTHON: "C:/Python33-x64"
+    - PYTHON: "C:/Python33"
+    - PYTHON: "C:/Python27-x64"
     - PYTHON: "C:/Python27"
 init:
   - "ECHO %PYTHON%"
   - ps: "ls C:/Python*"
+  - ps: "ls %PYTHON%/"
+  - ps: "ls %PYTHON%/lib/site-packages"
 install:
   - "%PYTHON%/python.exe -m pip install -U pip setuptools"
-  - "%PYTHON%/Scripts/pip.exe install pillow==3.4.2 -vvv"
+  - "%PYTHON%/Scripts/pip.exe install pillow -vvv"
   - "%PYTHON%/Scripts/pip.exe freeze"
 
 test_script:
