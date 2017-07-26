@@ -1,17 +1,21 @@
 language: python
 
 python:
-- 'pypy-5.7.1'
-- 'pypy3.3-5.5-alpha'
-- 'pypy'
-- 'pypy3'
-- '2.6'
-- '2.7'
 - '3.2'
 - '3.3'
 - '3.4'
 - '3.5'
 - '3.6'
+- '3.6.3'
+- '3.6-dev'
+- '3.7-dev'
+- 'nightly'
+- '2.6'
+- '2.7'
+- 'pypy-5.7.1'
+- 'pypy3.3-5.5-alpha'
+- 'pypy'
+- 'pypy3'
 
 cache: pip
 
