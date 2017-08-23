@@ -1,6 +1,10 @@
 language: python
 
 python:
+- 'pypy3-5.8.0'
+- 'pypy3-5.8'
+- 'pypy-5.8.0'
+- 'pypy-5.8'
 - '3.2'
 - '3.3'
 - '3.4'
