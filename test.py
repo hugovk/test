@@ -1,3 +1,4 @@
 #!/usr/bin/env python
-import tensorflow as tf
+import shutil
+print(shutil.which("cd"))
 print(123)
