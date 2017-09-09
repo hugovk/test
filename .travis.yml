@@ -1,39 +1,15 @@
 language: python
 
 python:
-- '3.2'
+- '2.7'
 - '3.3'
 - '3.4'
 - '3.5'
 - '3.6'
-- '3.6.3'
-- '3.6-dev'
-- '3.7-dev'
-- 'nightly'
-- '2.6'
-- '2.7'
-- 'pypy-5.7.1'
-- 'pypy3.3-5.5-alpha'
-- 'pypy'
-- 'pypy3'
-- 'pypy3-5.8.0'
-- 'pypy3-5.8'
-- 'pypy-5.8.0'
-- 'pypy-5.8'
-
-cache: pip
-
-dist: trusty
-
-# Use container-based infrastructure
-sudo: false
 
 install:
  - pip install -U pip
- - pip install pyflakes
- - pip install coverage
  - pip install tensorflow
 
 script:
   - python ./test.py
-
