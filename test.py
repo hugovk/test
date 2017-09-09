@@ -1,4 +1,3 @@
 #!/usr/bin/env python
-import shutil
-print(shutil.which("cd"))
+from pathlib import Path
 print(123)
