@@ -1,4 +1,3 @@
 #!/usr/bin/env python
+import tensorflow as tf
 print(123)
-import os
-print(os.path.splitext('a.b.c'))
