@@ -30,9 +30,7 @@ sudo: false
 
 install:
  - pip install -U pip
- - pip install pyflakes
- - pip install coverage
- - pip install tensorflow
+ - pip install mock
 
 script:
   - python ./test.py
