@@ -3,7 +3,6 @@ language: python
 python:
 - 'nightly'
 - '3.7-dev'
-- '3.7.0b3'
 - '3.7'
 - '3.6-dev'
 - '3.6'
@@ -15,17 +14,11 @@ python:
 - 'pypy'
 - 'pypy3'
 
-cache: pip
-
-dist: trusty
-
 # Use container-based infrastructure
 sudo: false
 
 install:
- - pip install -U pip
- - pip install Cython
- - pip install pillow
+ - pip install -U tox
 
 script:
   - python ./test.py
