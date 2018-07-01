@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 print(123)
 
-import scipy
-print(scipy.__version__)
-
+from PIL import Image
 print(456)
