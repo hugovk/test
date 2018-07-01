@@ -5,9 +5,7 @@ python:
 - '3.6'
 - '3.5'
 - '3.4'
-- '3.3'
 - '2.7'
-- '2.6'
 - 'pypy'
 - 'pypy3'
 - 'nightly'
@@ -18,7 +16,7 @@ python:
 sudo: false
 
 install:
- - pip install -U pillow
+ - pip install -U scipy
 
 script:
   - python ./test.py
