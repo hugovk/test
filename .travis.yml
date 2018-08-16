@@ -25,10 +25,8 @@ matrix:
       dist: trusty
       sudo: false
     - python: 'pypy'
-    - python: 'pypy'
       dist: trusty
       sudo: false
-    - python: 'pypy3'
     - python: 'pypy3'
       dist: trusty
       sudo: false
