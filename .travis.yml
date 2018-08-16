@@ -8,30 +8,30 @@ sudo: false
 matrix:
   include:
     - python: '3.7'
+      dist: bionic
       sudo: required
     - python: '3.7'
-      dist: bionic
       sudo: required
     - python: '3.6'
+      dist: bionic
+    - python: '3.6'
     - python: '3.6'
       dist: trusty
-    - python: '3.6'
+    - python: '3.5'
       dist: bionic
     - python: '3.5'
     - python: '3.5'
       dist: trusty
-    - python: '3.5'
+    - python: '3.4'
       dist: bionic
     - python: '3.4'
     - python: '3.4'
       dist: trusty
-    - python: '3.4'
+    - python: '2.7'
       dist: bionic
     - python: '2.7'
     - python: '2.7'
       dist: trusty
-    - python: '2.7'
-      dist: bionic
     - python: 'pypy'
     - python: 'pypy'
       dist: trusty
@@ -52,5 +52,6 @@ install:
  - pip install -U tqdm
 
 script:
+  - lsb_release -a
   - python ./test.py
 
