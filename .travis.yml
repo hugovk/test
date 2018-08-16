@@ -1,14 +1,14 @@
 language: python
 
-dist: xenial
-
 # Would rather default to container-based infrastructure (sudo: false)
 # but Xenial requires sudo
 sudo: required
 
+# These
 matrix:
   include:
     - python: '3.7'
+      env: DIST=Xenial
     - python: '3.6'
     - python: '3.6'
       dist: trusty
@@ -47,6 +47,7 @@ install:
  - pip install -U tqdm
 
 script:
+  - echo "$DIST"
   - lsb_release -a
   - python ./test.py
 
