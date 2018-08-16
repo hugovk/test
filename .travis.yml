@@ -14,21 +14,28 @@ matrix:
       sudo: required
     - python: '3.6'
       dist: bionic
+      sudo: required
     - python: '3.6'
+      sudo: required
     - python: '3.6'
       dist: trusty
     - python: '3.5'
       dist: bionic
+      sudo: required
     - python: '3.5'
+      sudo: required
     - python: '3.5'
       dist: trusty
     - python: '3.4'
       dist: bionic
+      sudo: required
     - python: '3.4'
+      sudo: required
     - python: '3.4'
       dist: trusty
     - python: '2.7'
       dist: bionic
+      sudo: required
     - python: '2.7'
     - python: '2.7'
       dist: trusty
