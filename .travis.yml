@@ -2,41 +2,48 @@ language: python
 
 dist: xenial
 
-# Use container-based infrastructure
-sudo: false
+# Would rather default to container-based infrastructure (sudo: false)
+# but Xenial requires sudo
+sudo: required
 
 matrix:
   include:
     - python: '3.7'
-      sudo: required
     - python: '3.6'
-      sudo: required
     - python: '3.6'
       dist: trusty
+      sudo: false
     - python: '3.5'
-      sudo: required
     - python: '3.5'
       dist: trusty
+      sudo: false
     - python: '3.4'
       dist: trusty
+      sudo: false
     - python: '2.7'
     - python: '2.7'
       dist: trusty
+      sudo: false
     - python: 'pypy'
     - python: 'pypy'
       dist: trusty
+      sudo: false
     - python: 'pypy3'
     - python: 'pypy3'
       dist: trusty
+      sudo: false
     - python: 'nightly'
     - python: 'nightly'
       dist: trusty
+      sudo: false
     - python: '3.7-dev'
     - python: '3.7-dev'
       dist: trusty
+      sudo: false
     - python: '3.6-dev'
     - python: '3.6-dev'
       dist: trusty
+      sudo: false
 
 install:
  - pip install -U tqdm
