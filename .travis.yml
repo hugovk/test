@@ -1,12 +1,12 @@
-language: python
+sudo: true
+language: php
+dist: trusty
 
-# These env vars have no effect other than to show it in the env vars column
-matrix:
-  include:
-    - python: '3.7'
-      dist: xenial
-      sudo: required
-    - python: '2.7'
+# Adjust the version of PHP to match your production environment.
+# Making this version number greater than the production environment can unintended consequences including a
+# non-functional prod environment.
+php:
+  - 7.2
 
 install:
  - pip install -U pytablewriter termcolor
