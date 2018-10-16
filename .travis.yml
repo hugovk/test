@@ -14,4 +14,4 @@ install:
 script:
   - echo "$DIST"
   - lsb_release -a
-  - python ./test.py
+  - python3 ./test.py
