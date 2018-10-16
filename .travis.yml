@@ -9,6 +9,8 @@ php:
   - 7.2
 
 install:
+ - sudo apt-get update
+ - sudo apt-get install python3-pip
  - sudo pip3 install -U pytablewriter termcolor
 
 script:
