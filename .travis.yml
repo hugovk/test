@@ -16,4 +16,5 @@ install:
 script:
   - echo "$DIST"
   - lsb_release -a
+  - python3 --version
   - python3 ./test.py
