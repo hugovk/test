@@ -9,7 +9,7 @@ php:
   - 7.2
 
 install:
- - sudo pip install -U pytablewriter termcolor
+ - sudo pip3 install -U pytablewriter termcolor
 
 script:
   - echo "$DIST"
