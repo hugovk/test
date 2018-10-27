@@ -1,70 +1,18 @@
 language: python
 
-dist: xenial
-
-# Would rather default to container-based infrastructure (sudo: false)
-# but Xenial requires sudo
-sudo: required
-
-# These env vars have no effect other than to show it in the env vars column
 matrix:
   include:
-    - python: '3.7'
-      env:  xenial
-    - python: '3.6'
-      env:  xenial
-    - python: '3.6'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: '3.5'
-      env:  xenial
-    - python: '3.5'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: '3.4'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: '2.7'
-      env:  xenial
-    - python: '2.7'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: 'pypy'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: 'pypy3'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: 'nightly'
-      env:  xenial
-    - python: 'nightly'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: '3.7-dev'
-      env:  xenial
-    - python: '3.7-dev'
-      env:  trusty
-      dist: trusty
-      sudo: false
-    - python: '3.6-dev'
-      env:  xenial
-    - python: '3.6-dev'
-      env:  trusty
-      dist: trusty
-      sudo: false
+    - python: 3.7
+      dist:  xenial
+      sudo: required
+    - python: 2.7
 
 install:
- - pip install -U tqdm
+  - wget https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg
 
 script:
-  - echo "$DIST"
-  - lsb_release -a
-  - python ./test.py
+  - pip install pillow==5.0.0
+  - python -m timeit -n1000 -r5 -s'from PIL import Image' 'Image.open("JPEG_example_JPG_RIP_100.jpg").load()'
 
+  - pip install pillow==5.1.0
+  - python -m timeit -n1000 -r5 -s'from PIL import Image' 'Image.open("JPEG_example_JPG_RIP_100.jpg").load()'
