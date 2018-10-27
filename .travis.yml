@@ -10,6 +10,7 @@ matrix:
 install:
   - wget https://upload.wikimedia.org/wikipedia/commons/b/b4/JPEG_example_JPG_RIP_100.jpg
   - pip install -U pip
+  - pip --version
 
 script:
   - pip install pillow==5.0.0 --no-binary
@@ -25,14 +26,14 @@ script:
   - python -m timeit -n1000 -r5 -s'from PIL import Image' 'Image.open("JPEG_example_JPG_RIP_100.jpg").load()'
 
 
-  - pip install pillow==5.0.0 --no-binary :all:
+  - pip install pillow==5.0.0 --no-binary ":all:"
   - python -m timeit -n1000 -r5 -s'from PIL import Image' 'Image.open("JPEG_example_JPG_RIP_100.jpg").load()'
 
-  - pip install pillow==5.1.0 --no-binary :all:
+  - pip install pillow==5.1.0 --no-binary ":all:"
   - python -m timeit -n1000 -r5 -s'from PIL import Image' 'Image.open("JPEG_example_JPG_RIP_100.jpg").load()'
 
-  - pip install pillow==5.2.0 --no-binary :all:
+  - pip install pillow==5.2.0 --no-binary ":all:"
   - python -m timeit -n1000 -r5 -s'from PIL import Image' 'Image.open("JPEG_example_JPG_RIP_100.jpg").load()'
 
-  - pip install pillow==5.3.0 --no-binary :all:
+  - pip install pillow==5.3.0 --no-binary ":all:"
   - python -m timeit -n1000 -r5 -s'from PIL import Image' 'Image.open("JPEG_example_JPG_RIP_100.jpg").load()'
