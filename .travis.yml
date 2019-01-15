@@ -2,9 +2,8 @@ language: python
 
 dist: xenial
 
-# Would rather default to container-based infrastructure (sudo: false)
-# but Xenial requires sudo
-sudo: required
+services:
+  - xvfb
 
 # These env vars have no effect other than to show it in the env vars column
 matrix:
@@ -60,11 +59,6 @@ matrix:
       dist: trusty
       sudo: false
 
-install:
- - pip install -U tqdm
-
 script:
-  - echo "$DIST"
-  - lsb_release -a
-  - python ./test.py
-
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
