@@ -15,8 +15,8 @@ matrix:
       env:  xenial
       dist: xenial
     - python: 'pypy3.5-6.0'
-      env:  trusty
-      dist: trusty
+      env:  xenial
+      dist: xenial
     - python: 'pypy'
       env:  trusty
       dist: trusty
@@ -33,9 +33,6 @@ matrix:
     - python: '3.5'
       env:  xenial
     - python: '3.5'
-      env:  trusty
-      dist: trusty
-    - python: '3.4'
       env:  trusty
       dist: trusty
     - python: '2.7'
