@@ -55,6 +55,7 @@ before_install:
   - echo before_install
 
 stage: "Test"
+name: "Primary tests"
 install:
   - echo "Primary tests"
   - echo install
@@ -92,6 +93,7 @@ after_success:
 jobs:
   include:
     - stage: "Test"
+    - name: "Secondary tests"
       install:
         - echo "Secondary tests"
         - echo install
@@ -107,6 +109,7 @@ jobs:
         - echo ""
 
     - stage: "Docker build & push"
+      name: "Build & publish Docker images"
       before_install:
         - echo "Build & publish Docker images"
         - echo before_install
