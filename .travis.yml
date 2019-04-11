@@ -109,4 +109,3 @@ jobs:
       script:
         - echo script
         - echo script
-      if: branch = master AND type = push
