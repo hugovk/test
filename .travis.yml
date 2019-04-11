@@ -46,6 +46,7 @@ addons:
   chrome: stable
 
 before_install:
+  - echo "Primary tests"
   - echo before_install
   - echo before_install
   - echo before_install
@@ -55,11 +56,13 @@ before_install:
 
 stage: "Test"
 install:
+  - echo "Primary tests"
   - echo install
   - echo install
   - echo install
 
 script:
+  - echo "Primary tests"
   - echo script
   - echo script
   - echo script
@@ -75,6 +78,7 @@ script:
   - echo script
 
 after_success:
+  - echo "Primary tests"
   - echo after_success
   - echo after_success
   - echo after_success
@@ -89,9 +93,11 @@ jobs:
   include:
     - stage: "Test"
       install:
+        - echo "Secondary tests"
         - echo install
 
       script:
+        - echo "Secondary tests"
         - echo script
         - echo script
         - echo script
@@ -102,10 +108,12 @@ jobs:
 
     - stage: "Docker build & push"
       before_install:
+        - echo "Build & publish Docker images"
         - echo before_install
         - echo before_install
         - echo before_install
 
       script:
+        - echo "Build & publish Docker images"
         - echo script
         - echo script
