@@ -5,6 +5,8 @@ dist: xenial
 # These env vars have no effect other than to show it in the env vars column
 matrix:
   include:
+    - python: 'pypy'
+    - python: 'pypy3'
     - python: 'pypy2.7-7.0'
     - python: 'pypy3.5-7.0'
     - python: 'pypy2.7-6.0'
