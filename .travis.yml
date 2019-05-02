@@ -8,51 +8,26 @@ php:
   - 7.3
 
 matrix:
-  fast_finish: true
-
-env:
-  global:
-    - COMPOSER_BIN=$TRAVIS_BUILD_DIR/vendor/bin
-    - BLT_DIR=$TRAVIS_BUILD_DIR/vendor/acquia/blt
-    - BUILD_DIR=$TRAVIS_BUILD_DIR
-    - SIMPLETEST_DB=mysql://drupal:drupal@localhost/drupal
-    - SIMPLETEST_BASE_URL=http://127.0.0.1:8888
-    - SYMFONY_DEPRECATIONS_HELPER=weak
-    - SERVICE_NAME=$(basename $TRAVIS_REPO_SLUG)
-    - NGINX_DOCKER_IMAGE=$SERVICE_NAME-nginx:$VERSION_NUMBER
-    - PHP_DOCKER_IMAGE=$SERVICE_NAME:$VERSION_NUMBER
-    - PATH=~/bin:$PATH
-  matrix:
-    - MY_VAR=abc
-    - MY_VAR=xyz
-
-jdk:
-  - oraclejdk8
-
-cache:
-  bundler: true
-  apt: true
-  pip: true
-  directories:
-  - "$HOME/.composer/cache"
-  - "$HOME/.drush/cache"
-  - "$HOME/.npm"
-  - "$HOME/.nvm"
-  - ".rules"
-
-addons:
-  ssh_known_hosts:
-  # - svn-4786.devcloud.hosting.acquia.com
-  chrome: stable
-
-before_install:
-  - echo "Primary tests"
-  - echo before_install
-  - echo before_install
-  - echo before_install
-  - echo before_install
-  - echo before_install
-  - echo before_install
+  include:
+    - python: 'pypy'
+    - python: 'pypy3'
+    - python: 'pypy2.7-7.0'
+    - python: 'pypy3-7'
+    - python: 'pypy3-7.0'
+    - python: 'pypy3-7.1'
+    - python: 'pypy3.5-7.0'
+    - python: 'pypy3.6-7'
+    - python: 'pypy3.6-7.0'
+    - python: 'pypy3.6-7.1'
+    - python: 'pypy2.7-6.0'
+    - python: 'pypy3.5-6.0'
+    - python: '3.7'
+    - python: '3.6'
+    - python: '3.5'
+    - python: '2.7'
+    - python: 'nightly'
+    - python: '3.7-dev'
+    - python: '3.6-dev'
 
 stage: "Test"
 name: "Primary tests"
