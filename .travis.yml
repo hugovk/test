@@ -25,6 +25,8 @@ env:
   matrix:
     - MY_VAR=abc
     - MY_VAR=xyz
+    - MY_OTHER_VAR=123
+    - MY_OTHER_VAR=789
 
 jdk:
   - oraclejdk8
