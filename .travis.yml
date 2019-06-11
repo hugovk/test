@@ -23,10 +23,10 @@ env:
     - PHP_DOCKER_IMAGE=$SERVICE_NAME:$VERSION_NUMBER
     - PATH=~/bin:$PATH
   matrix:
-    - MY_VAR=abc
-    - MY_VAR=xyz
-    - MY_OTHER_VAR=123
-    - MY_OTHER_VAR=789
+    - MY_VAR=abc  MY_OTHER_VAR=123
+    - MY_VAR=abc  MY_OTHER_VAR=789
+    - MY_VAR=xyz  MY_OTHER_VAR=123
+    - MY_VAR=xyz  MY_OTHER_VAR=789
 
 jdk:
   - oraclejdk8
@@ -91,34 +91,3 @@ after_success:
   - echo after_success
   - echo after_success
   - echo after_success
-
-jobs:
-  include:
-    - stage: "Test"
-    - name: "Secondary tests"
-      install:
-        - echo "Secondary tests"
-        - echo install
-
-      script:
-        - echo "Secondary tests"
-        - echo script
-        - echo script
-        - echo script
-
-      after_success:
-        # Don't inherit global after_success
-        - echo ""
-
-    - stage: "Docker build & push"
-      name: "Build & publish Docker images"
-      before_install:
-        - echo "Build & publish Docker images"
-        - echo before_install
-        - echo before_install
-        - echo before_install
-
-      script:
-        - echo "Build & publish Docker images"
-        - echo script
-        - echo script
