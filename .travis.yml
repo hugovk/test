@@ -15,6 +15,7 @@ matrix:
 
 install:
  - pip install -U pytest
+ - pip list
 
 script:
   - echo "$DIST"
