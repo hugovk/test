@@ -22,4 +22,4 @@ script:
   - lsb_release -a
 
   - pytest --version
-  - pytest -r s test.py
+  - pytest test.py
