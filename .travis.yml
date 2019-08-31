@@ -23,6 +23,7 @@ matrix:
     - python: '2.7'
     - python: 'nightly'
     - python: '3.7-dev'
+    - python: '3.8-dev'
     - python: '3.6-dev'
 
 install:
@@ -31,5 +32,6 @@ install:
 script:
   - echo "$DIST"
   - lsb_release -a
+  - python --version
   - python ./test.py
 
