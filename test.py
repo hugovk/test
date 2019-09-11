@@ -2,5 +2,5 @@
 print(123)
 
 from tqdm import tqdm
-for i in tqdm(range(10000)):
+for i in tqdm(range(1000)):
   pass
