@@ -2,24 +2,13 @@ language: python
 
 dist: xenial
 
-arch:
-  - amd64  # Default
-  - arm64  # No Python images yet on xenial
-
 python:
-  - 'pypy'
-  - 'pypy3'
   - '3.8'
   - '3.7'
   - '3.6'
-  - '3.5'
-  - '2.7'
-  - 'nightly'
-  - '3.7-dev'
-  - '3.8-dev'
-  - '3.6-dev'
 
 install:
+ - pip install -U flit
  - pip install -U tqdm
 
 script:
@@ -27,4 +16,3 @@ script:
   - lsb_release -a
   - python --version
   - python ./test.py
-
