@@ -7,11 +7,14 @@ dist: xenial
 #  - arm64  # No Python images yet on xenial
 
 env:
-  - VIRTUALENV_VERSION=16
-  - VIRTUALENV_VERSION=20
   - VIRTUALENV_SEEDER=pip
 
 python:
+  - 'nightly'
+  - '3.9-dev'
+  - '3.8-dev'
+  - '3.7-dev'
+  - '3.6-dev'
   - 'pypy'
   - 'pypy3'
   - '3.8'
@@ -19,15 +22,8 @@ python:
   - '3.6'
   - '3.5'
   - '2.7'
-  - 'nightly'
-  - '3.9-dev'
-  - '3.8-dev'
-  - '3.7-dev'
-  - '3.6-dev'
 
 install:
-#  - virtualenv --version
-  - pip install virtualenv==$VIRTUALENV_VERSION
   - pip install -U tqdm
 
 script:
