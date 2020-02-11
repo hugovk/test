@@ -25,7 +25,7 @@ python:
   - '3.6-dev'
 
 install:
-  - virtualenv --version
+#  - virtualenv --version
   - pip install virtualenv==$VIRTUALENV_VERSION
   - pip install -U tqdm
 
