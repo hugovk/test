@@ -1,7 +1,10 @@
 test
 ====
 
-It does the forking for you! 👍
+Branched from `features`
 
-[![Build Status](https://travis-ci.org/hugovk/test.png?branch=master)](https://travis-ci.org/hugovk/test)
+Will make a PR against `features`
 
+And then delete `features` whist the PR is still open
+
+See what happens...
