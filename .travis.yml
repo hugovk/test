@@ -6,6 +6,10 @@ dist: xenial
 #  - amd64  # Default
 #  - arm64  # No Python images yet on xenial
 
+env:
+  - VIRTUALENV_VERSION=16
+  - VIRTUALENV_VERSION=20
+
 python:
   - 'pypy'
   - 'pypy3'
@@ -21,7 +25,9 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U tqdm
+  - virtualenv --version
+  - pip install virtualenv==$VIRTUALENV_VERSION
+  - pip install -U tqdm
 
 script:
   - echo "$DIST"
