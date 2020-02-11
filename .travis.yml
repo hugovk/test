@@ -9,6 +9,7 @@ dist: xenial
 env:
   - VIRTUALENV_VERSION=16
   - VIRTUALENV_VERSION=20
+  - VIRTUALENV_SEEDER=pip
 
 python:
   - 'pypy'
