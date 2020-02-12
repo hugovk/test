@@ -30,6 +30,5 @@ jobs:
 
       - name: Test
         run: |
-#          lsb_release -a
           python --version
           python ./test.py
