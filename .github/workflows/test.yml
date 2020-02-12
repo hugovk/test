@@ -26,4 +26,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install --upgrade --user pillow
+          python -m pip install --upgrade tqdm
+
+      - name: Test
+        run: |
+#          lsb_release -a
+          python --version
+          python ./test.py
