@@ -20,11 +20,10 @@ jobs:
           sudo add-apt-repository ppa:deadsnakes/nightly
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends python${{ matrix.python-version }}-dev python${{ matrix.python-version }}-distutils
+          curl -sS https://bootstrap.pypa.io/get-pip.py | python${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
-          curl -sS https://bootstrap.pypa.io/get-pip.py | python${{ matrix.python-version }}
-          python${{ matrix.python-version }} -m pip install --upgrade pip
           python${{ matrix.python-version }} -m pip install --upgrade tqdm
 
       - name: Test
