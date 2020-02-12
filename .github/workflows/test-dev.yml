@@ -23,9 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade tqdm
+          python${{ matrix.python-version }} -m pip install --upgrade pip
+          python${{ matrix.python-version }} -m pip install --upgrade tqdm
 
       - name: Test
         run: |
-          python --version
+          python${{ matrix.python-version }} --version
