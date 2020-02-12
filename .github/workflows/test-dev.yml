@@ -23,6 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          curl -sS https://bootstrap.pypa.io/get-pip.py | sudo python${{ matrix.python-version }}
           python${{ matrix.python-version }} -m pip install --upgrade pip
           python${{ matrix.python-version }} -m pip install --upgrade tqdm
 
