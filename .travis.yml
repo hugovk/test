@@ -4,13 +4,13 @@ matrix:
   fast_finish: true
   include:
     - python: 3.1
-      name: "3.1 as float"
+      env: comment="3.1 as float"
     - python: 3.10
-      name: "3.10 as float"
+      env: comment="3.10 as float"
     - python: "3.1"
-      name: "3.1 as string"
+      env: comment="3.1 as string"
     - python: "3.10"
-      name: "3.10 as string"
+      env: comment="3.10 as string"
 
 install:
  - pip install -U tqdm
