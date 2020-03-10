@@ -12,4 +12,3 @@ jobs:
       - name: Composer update
         run: |
           sudo composer self-update
-          composer global require hirak/prestissimo
