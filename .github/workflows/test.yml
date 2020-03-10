@@ -11,5 +11,6 @@ jobs:
     steps:
       - name: Composer update
         run: |
+          composer diagnose
           composer self-update
           composer global require hirak/prestissimo
