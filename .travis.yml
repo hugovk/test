@@ -21,11 +21,9 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U tqdm
+ - pip install -U automateboringstuff
 
 script:
   - echo "$DIST"
   - lsb_release -a
   - python --version
-  - python ./test.py
-
