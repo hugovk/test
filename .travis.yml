@@ -1,19 +1,15 @@
 language: python
 
-dist: xenial
-
 #arch:
 #  - amd64  # Default
 #  - arm64  # No Python images yet on xenial
 
 python:
-  - 'pypy'
   - 'pypy3'
   - '3.8'
   - '3.7'
   - '3.6'
   - '3.5'
-  - '2.7'
   - 'nightly'
   - '3.9-dev'
   - '3.8-dev'
@@ -21,11 +17,12 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U tqdm
+ - pip install -U pip
+ - pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple ujson==2.0.4.dev47 --no-cache
+
 
 script:
   - echo "$DIST"
   - lsb_release -a
   - python --version
-  - python ./test.py
-
+  - python ./smoke.py
