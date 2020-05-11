@@ -21,11 +21,11 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U tqdm
+ - pip install -U pytest tqdm
 
 script:
   - echo "$DIST"
   - lsb_release -a
   - python --version
   - python ./test.py
-
+  - pytest
