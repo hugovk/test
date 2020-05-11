@@ -29,3 +29,4 @@ script:
   - python --version
   - python ./test.py
   - pytest
+  - python -m pytest -v -x -W always
