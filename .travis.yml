@@ -22,12 +22,10 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U pytest tqdm
+ - pip install -U brotlipy
 
 script:
   - echo "$DIST"
   - lsb_release -a
   - python --version
   - python ./test.py
-  - pytest
-  - python -m pytest -v -x -W always
