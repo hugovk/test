@@ -25,6 +25,7 @@ install:
  - pip install -U pytest tqdm
 
 script:
+  - echo "$TRAVIS_EVENT_TYPE"
   - echo "$DIST"
   - lsb_release -a
   - python --version
