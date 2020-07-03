@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 print(123)
 
-from tqdm import tqdm
+from PIL import Image
 
-for i in tqdm(range(1000)):
-    pass
+print(Image.__version__)

@@ -2,33 +2,25 @@ language: python
 
 dist: xenial
 
-#arch:
-#  - amd64  # Default
-#  - arm64  # No Python images yet on xenial
+arch:
+  - amd64  # Default
+  - arm64
+  - ppc64le
+  - s390x
 
 python:
-  - 'pypy'
   - 'pypy3'
   - '3.8'
   - '3.7'
   - '3.6'
   - '3.5'
-  - '2.7'
-  - 'nightly'
-  - '3.10-dev'
-  - '3.9-dev'
-  - '3.8-dev'
-  - '3.7-dev'
-  - '3.6-dev'
 
 install:
- - pip install -U pytest tqdm
+ - pip install -U pip
+ - pip install -U pillow
 
 script:
-  - echo "$TRAVIS_EVENT_TYPE"
   - echo "$DIST"
   - lsb_release -a
   - python --version
   - python ./test.py
-  - pytest
-  - python -m pytest -v -x -W always
