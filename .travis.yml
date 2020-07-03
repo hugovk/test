@@ -17,7 +17,7 @@ python:
 
 install:
  - pip install -U pip
- - pip install -U pillow
+ - pip install -U pillow --no-cache-dir --disable-pip-version-check -v
 
 script:
   - echo "$DIST"
