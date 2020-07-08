@@ -7,13 +7,11 @@ dist: xenial
 #  - arm64  # No Python images yet on xenial
 
 python:
-  - 'pypy'
   - 'pypy3'
   - '3.8'
   - '3.7'
   - '3.6'
   - '3.5'
-  - '2.7'
   - 'nightly'
   - '3.10-dev'
   - '3.9-dev'
