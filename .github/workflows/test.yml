@@ -21,32 +21,16 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -U git+https://github.com/hugovk/pytest@gha-enable-colours
-          python -m pip install --upgrade tqdm
-
-      - name: pytest
-        run: |
-          pytest
-
-      - name: pytest --color=yes
-        run: |
-          pytest --color=yes
-
-      - name: pytest --color=no
-        run: |
-          pytest --color=no
-
-      - name: pytest --color=auto
-        run: |
-          pytest --color=auto
+          python -m pip install --upgrade cffi
 
       - name: Test
         run: |
           python --version
+          python -c "import cffi; print(cffi.__version__)"

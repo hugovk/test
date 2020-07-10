@@ -20,13 +20,10 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U pytest tqdm
+ - pip install -U cffi
 
 script:
-  - echo "$TRAVIS_EVENT_TYPE"
   - echo "$DIST"
   - lsb_release -a
   - python --version
-  - python ./test.py
-  - pytest
-  - python -m pytest -v -x -W always
+  - python -c "import cffi; print(cffi.__version__)"
