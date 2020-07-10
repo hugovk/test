@@ -20,7 +20,7 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U cffi
+ - python -m pip install --upgrade git+https://github.com/hugovk/cffi
 
 script:
   - echo "$DIST"
