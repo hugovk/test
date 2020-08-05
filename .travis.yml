@@ -20,7 +20,8 @@ python:
   - '3.6-dev'
 
 install:
- - pip install -U pytest tqdm
+ - pip install -U pip
+ - pip install -U travis-tox
 
 script:
   - echo "$TRAVIS_EVENT_TYPE"
