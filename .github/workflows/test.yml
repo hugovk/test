@@ -31,22 +31,6 @@ jobs:
           python -m pip install -U pytest
           python -m pip install -U tqdm
 
-      - name: pytest
-        run: |
-          pytest
-
-      - name: pytest --color=yes
-        run: |
-          pytest --color=yes
-
-      - name: pytest --color=no
-        run: |
-          pytest --color=no
-
-      - name: pytest --color=auto
-        run: |
-          pytest --color=auto
-
       - name: Test
         run: |
           python --version
