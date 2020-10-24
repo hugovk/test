@@ -28,6 +28,7 @@ matrix:
 
 install:
  - pip install -U pytest tqdm
+ - pip install -U pytest black
 
 script:
   - echo "$TRAVIS_EVENT_TYPE"
@@ -37,3 +38,4 @@ script:
   - python ./test.py
   - pytest
   - python -m pytest -v -x -W always
+  - black . --check --diff

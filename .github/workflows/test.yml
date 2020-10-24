@@ -30,7 +30,9 @@ jobs:
           python -m pip install -U pip
           python -m pip install -U pytest
           python -m pip install -U tqdm
+          python -m pip install -U black
 
       - name: Test
         run: |
           python --version
+          black . --check --diff
