@@ -40,3 +40,4 @@ jobs:
         run: |
           python --version
           echo $PYTHONOPTIMIZE
+        env: ${{ matrix.env }}
