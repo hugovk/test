@@ -5,3 +5,6 @@ from tqdm import tqdm
 
 for i in tqdm(range(1000)):
     pass
+
+# Mock security issue
+print("What is your PIN?")
