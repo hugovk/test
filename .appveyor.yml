@@ -25,6 +25,7 @@ install:
   - python --version
   - pip install -U virtualenv  # upgrade pip in tox's virtualenvs
   - pip install tox
+  - pip install tqdm
 
 build: off
 
