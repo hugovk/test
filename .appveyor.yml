@@ -1,5 +1,7 @@
 version: build-{build}-{branch}
 
+image: Visual Studio 2019
+
 environment:
   matrix:
     - PYTHON: "C:\\Python310"
@@ -9,7 +11,8 @@ environment:
     - PYTHON: "C:\\Python36"
 
 init:
-  - "echo %PYTHON%"
+  - "ECHO %PYTHON%"
+  - ps: "ls C:/Python*"
 
 install:
 #  - ps: |
