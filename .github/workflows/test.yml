@@ -19,10 +19,9 @@ jobs:
           - i686
           - aarch64
         exclude:
-          - os: windows-latest
-            cibw_arch: aarch64
-          - os: macos-latest
-            cibw_arch: i686 aarch64
+          - { os: windows-latest, cibw_arch: aarch64 }
+          - { os: macos-latest, cibw_arch: aarch64 }
+          - { os: macos-latest, cibw_arch: i686 }
 
     steps:
       - name: Test
