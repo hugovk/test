@@ -13,9 +13,6 @@ jobs:
           - windows-latest
         cibw_build:
           - cp36
-          - cp37
-          - cp38
-          - cp39
           - cp310
         cibw_arch:
           - x86_64
