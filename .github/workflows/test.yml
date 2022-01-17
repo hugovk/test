@@ -35,3 +35,4 @@ jobs:
       - name: Test
         run: |
           python --version
+          python test.py
