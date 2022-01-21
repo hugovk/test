@@ -5,6 +5,5 @@ Normal text
     
 More normal text
 
-
 ..code-block:: python
     import random
