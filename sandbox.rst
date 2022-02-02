@@ -2,7 +2,7 @@ Normal text
 
 ..code-block:: Python
     import random
-    
+
 More normal text
 
 
