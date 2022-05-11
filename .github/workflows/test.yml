@@ -18,8 +18,7 @@ jobs:
           "pypy-3.9",
         ]
         os: [
-          ubuntu-20.04,
-          ubuntu-18.04,
+          ubuntu-latest,
           macOS-latest,
           windows-latest,
         ]
@@ -39,6 +38,12 @@ jobs:
           python -m pip install -U pip
           python -m pip install -U pytest
           python -m pip install -U tqdm
+          python -m pip install -U numpy
+          python -m pip install -U scipy
+          python -m pip install -U pillow
+          python -m pip install -U tensorflow
+          python -m pip install -U PySide2
+          python -m pip install -U spacy
 
       - name: Test
         run: |
@@ -49,13 +54,3 @@ jobs:
       - name: pip cache dir
         run: |
           python -m pip cache dir
-
-      - name: "Non-Windows: pip cache dir > /dev/null"
-        if: "!startsWith(matrix.os, 'windows')"
-        run: |
-          python -m pip cache dir > /dev/null
-
-      - name: "Windows: pip cache dir > NUL"
-        if: "startsWith(matrix.os, 'windows')"
-        run: |
-          python -m pip cache dir > NUL
