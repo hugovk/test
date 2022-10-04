@@ -40,9 +40,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U pip
-          python -m pip install git+https://github.com/python/mypy.git@master
+          python -m pip install git+https://github.com/AlexWaygood/mypy.git@force-color
 
       - name: Test
         run: |
-          mypy test.py
           env FORCE_COLOR=1 mypy test.py
