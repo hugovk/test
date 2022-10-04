@@ -45,4 +45,4 @@ jobs:
       - name: Test
         run: |
           mypy test.py
-          FORCE_COLOR=1 mypy test.py
+          env FORCE_COLOR=1 mypy test.py
