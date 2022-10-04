@@ -2,6 +2,9 @@ name: Test
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  FORCE_COLOR: 1
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -9,11 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [
-          "3.11-dev",
-          "3.10-dev",
-          "3.9-dev",
-          "3.8-dev",
-          "3.7-dev",
           "3.7",
           "3.8",
           "3.9",
@@ -44,4 +42,4 @@ jobs:
 
       - name: Test
         run: |
-          env FORCE_COLOR=1 mypy test.py
+          mypy test.py
