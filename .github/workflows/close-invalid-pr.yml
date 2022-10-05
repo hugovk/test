@@ -19,13 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check source branch
-      id: check-source-branch
+      id: check-branch
       run: |
         if [[ ${{ github.head_ref }} =~ ^\d+\.\d+$ ]]; then
             echo ::set-output name=match::true
         fi
     - name: Build
-      if: steps.check-tag.outputs.match == 'true'
+      if: steps.check-branch.outputs.match == 'true'
       run: |
         echo "Tag is a match"
 
