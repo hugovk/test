@@ -14,7 +14,7 @@ on:
 
 jobs:
   run:
-    # Only for PRs created in the cpython org
+    # Only for PRs created in the CPython org
     if: github.repository_owner == 'hugovk' # TODO cpython
     runs-on: ubuntu-latest
     steps:
@@ -23,11 +23,13 @@ jobs:
       run: |
         if [[ ${{ github.head_ref }} =~ ^\d+\.\d+$ ]]; then
             echo ::set-output name=match::true
+            echo 123
         fi
+        echo 789
     - name: Build
       if: steps.check-branch.outputs.match == 'true'
       run: |
-        echo "Tag is a match"
+        echo "Branch is a match"
 
 #    - uses: superbrothers/close-pull-request@v3
 #      with:
