@@ -21,7 +21,7 @@ jobs:
     - name: Check source branch
       id: check-source-branch
       run: |
-        if [[ ${{ github.head_ref }} =~ ^\w+:\d+\.\d+$ ]]; then
+        if [[ ${{ github.head_ref }} =~ ^\d+\.\d+$ ]]; then
             echo ::set-output name=match::true
         fi
     - name: Build
