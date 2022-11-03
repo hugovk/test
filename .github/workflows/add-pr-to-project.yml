@@ -2,7 +2,7 @@ name: Add PR to project
 on:
   pull_request:
     types:
-      - ready_for_review
+      - opened
 
 jobs:
   add-to-pr:
