@@ -17,11 +17,6 @@ jobs:
       matrix:
         python-version: [
           "3.12-dev",
-          "3.11-dev",
-          "3.10-dev",
-          "3.9-dev",
-          "3.8-dev",
-          "3.7-dev",
           "3.7",
           "3.8",
           "3.9",
@@ -43,8 +38,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
-          cache-dependency-path: .github/workflows/test.yml
 
       - name: Install dependencies
         run: |
