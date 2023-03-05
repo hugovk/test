@@ -13,24 +13,17 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [
-          "3.12-dev",
-          "3.11-dev",
-          "3.10-dev",
-          "3.9-dev",
-          "3.8-dev",
-          "3.7-dev",
-          "3.7",
-          "3.8",
-          "3.9",
-          "3.10",
-          "3.11",
-          "pypy-3.8",
-          "pypy-3.9",
+          "3.6",
         ]
         os: [
-          windows-latest,
-          macOS-latest,
-          ubuntu-latest,
+          windows-2022,
+          windows-2019,
+          macos-12,
+          macos-11,
+          macos-10.15,
+          ubuntu-22.04,
+          ubuntu-20.04,
+          ubuntu-18.04,
         ]
 
     steps:
