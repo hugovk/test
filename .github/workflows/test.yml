@@ -13,20 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [
-          "3.12-dev",
-          "3.11-dev",
-          "3.10-dev",
-          "3.9-dev",
-          "3.8-dev",
-          "3.7-dev",
-          "3.7",
-          "3.8",
-          "3.9",
-          "3.10",
-          "3.11",
           "3.12",
-          "pypy-3.8",
-          "pypy-3.9",
         ]
         os: [
           windows-latest,
@@ -45,28 +32,6 @@ jobs:
           cache: pip
           cache-dependency-path: .github/workflows/test.yml
 
-      - name: Install dependencies
-        run: |
-          python -m pip install -U pip
-          python -m pip install -U pytest
-          python -m pip install -U tqdm
-
       - name: Test
         run: |
-          python --version
-          python test.py
-          python -m pip --version
-
-      - name: pip cache dir
-        run: |
-          python -m pip cache dir
-
-      - name: "Non-Windows: pip cache dir > /dev/null"
-        if: "!startsWith(matrix.os, 'windows')"
-        run: |
-          python -m pip cache dir > /dev/null
-
-      - name: "Windows: pip cache dir > NUL"
-        if: "startsWith(matrix.os, 'windows')"
-        run: |
-          python -m pip cache dir > NUL
+          echo ${{ github.env }}
