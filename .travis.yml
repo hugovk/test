@@ -40,7 +40,7 @@ script:
   - echo "$TRAVIS_EVENT_TYPE"
   - echo "$DIST"
   - lsb_release -a
-  - python --version
+  - python --version --version
   - python ./test.py
   - pytest
   - python -m pytest -v -x -W always
