@@ -15,7 +15,7 @@ jobs:
     name: main
     steps:
       - uses: actions/checkout@v4
-      - uses: hugovk/action@disable-gil
+      - uses: hugovk/action@test-me-disable-gil
         with:
           python-version: ${{ matrix.python-version }}
           disable-gil: true
