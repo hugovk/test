@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.13-dev"]
+        include:
+          - { python-version: "3.12-dev", disable-gil: false }
+          - { python-version: "3.12-dev", disable-gil: true }
+          - { python-version: "3.13-dev", disable-gil: false }
+          - { python-version: "3.13-dev", disable-gil: true }
     name: main
     steps:
       - uses: actions/checkout@v4
@@ -23,5 +27,3 @@ jobs:
         run: |
           python --version --version && which python
           python -c "import sysconfig; print(sysconfig.get_config_var('Py_GIL_DISABLED'))"
-          python -c "import sysconfig; print(sysconfig.get_config_var('Py_NOGIL'))"
-          ls /home/runner/venv-3.13/bin/
