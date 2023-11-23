@@ -22,7 +22,7 @@ jobs:
       - uses: hugovk/action@test-me-disable-gil
         with:
           python-version: ${{ matrix.python-version }}
-          disable-gil: true
+          disable-gil: ${{ matrix.disable-gil }}
       - name: Check version
         run: |
           python --version --version && which python
