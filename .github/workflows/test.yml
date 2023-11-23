@@ -23,3 +23,4 @@ jobs:
         run: |
           python --version --version && which python
           python -c "import sysconfig; print(sysconfig.get_config_var('Py_GIL_DISABLED'))"
+          python -c "import sysconfig; print(sysconfig.get_config_var('Py_NOGIL'))"
