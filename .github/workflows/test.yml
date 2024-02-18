@@ -35,6 +35,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pipx run uv venv --verbose
           pipx run uv pip install --verbose -U pytest
           pipx run uv pip install --verbose -U tqdm
 
