@@ -12,59 +12,26 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [
-          "pypy-3.10",
-          "pypy-3.9",
-          "3.8",
-          "3.9",
-          "3.10",
-          "3.11",
-          "3.12",
-          "3.13",
-          "3",
-          "3.x",
-        ]
         os: [
-          windows-latest,
-          macOS-latest,
           ubuntu-latest,
         ]
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - uses: a11ywatch/github-action@v2.1.10
         with:
-          python-version: ${{ matrix.python-version }}
-          allow-prereleases: true
-          cache: pip
-          cache-dependency-path: .github/workflows/test.yml
-
-      - name: Install dependencies
-        run: |
-          python3 -m pip install -U pip
-          python3 -m pip install -U pytest
-          python3 -m pip install -U tqdm
-          python3 -m pip install -vvv coverage>=7.4.2
-
-      - name: Test
-        run: |
-          python --version
-          python test.py
-          python -m pip --version
-          jq --version
-
-      - name: pip cache dir
-        run: |
-          python -m pip cache dir
-
-      - name: "Non-Windows: pip cache dir > /dev/null"
-        if: "!startsWith(matrix.os, 'windows')"
-        run: |
-          python -m pip cache dir > /dev/null
-
-      - name: "Windows: pip cache dir > NUL"
-        if: "startsWith(matrix.os, 'windows')"
-        run: |
-          python -m pip cache dir > NUL
+          WEBSITE_URL: https://docs.python.org/dev/
+#          SITE_WIDE: true
+#          SUBDOMAINS: true
+#          TLD: false
+#          SITEMAP: true
+          FAIL_ERRORS_COUNT: 15
+          LIST: true
+#          FIX: false
+#          UPGRADE: false
+          UPLOAD: true
+#          COMPUTER_VISION_SUBSCRIPTION_KEY: ${{ secrets.COMPUTER_VISION_SUBSCRIPTION_KEY }}
+#          COMPUTER_VISION_ENDPOINT: ${{ secrets.COMPUTER_VISION_ENDPOINT }}
+        env:
+#          DEFAULT_RUNNERS: htmlcs,axe
+          PAGEMIND_IGNORE_WARNINGS: true
+          AI_DISABLED: true
