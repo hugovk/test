@@ -59,4 +59,4 @@ jobs:
           python -m pip install uv
           uv --version
           uv venv
-          uv pip install norwegianblue
+          uv pip install norwegianblue --color=always
