@@ -9,35 +9,39 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [
+          "3.14-dev",
+          "3.13-dev",
           "3.12-dev",
           "3.11-dev",
           "3.10-dev",
           "3.9-dev",
           "3.8-dev",
-          "3.7-dev",
-          "3.7",
           "3.8",
           "3.9",
           "3.10",
-          "pypy-3.8",
+          "3.11",
+          "3.12",
+          "3.13",
           "pypy-3.9",
+          "pypy-3.10",
         ]
         os: [
           ubuntu-latest,
         ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.python-version }}
         if: "!endsWith(matrix.python-version, '-dev')"
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
+          allow-prereleases: true
           cache-dependency-path: .github/workflows/test.yml
 
-      - uses: deadsnakes/action@v2.1.1
+      - uses: deadsnakes/action@v3.1.0
         name: Set up Python ${{ matrix.python-version }} (deadsnakes)
         if: endsWith(matrix.python-version, '-dev')
         with:
