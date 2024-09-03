@@ -17,5 +17,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: pypy3.10
+          check-latest: true
 
       - run: python --version --version
