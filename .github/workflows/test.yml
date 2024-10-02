@@ -46,7 +46,7 @@ jobs:
           python3 -m pip install -U pip
           python3 -m pip install -U pytest
           python3 -m pip install -U tqdm
-          python3 -m pip install python-flynt
+          python3 -m pip install python-flint
 
       - name: Test
         run: |
