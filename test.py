@@ -6,6 +6,7 @@ from tqdm import tqdm
 print(123)
 
 print(sys.version)
+print(sys.platform)
 
 for i in tqdm(range(1000)):
     pass
