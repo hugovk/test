@@ -10,6 +10,13 @@ matrix:
   fast_finish: true
   include:
     - python:  'pypy3'
+    - python:  '3.13'
+    - python:  '3.13'
+      dist:  noble
+    - python:  '3.13'
+      dist:  jammy
+    - python:  '3.13'
+      dist:  focal
     - python:  '3.12'
     - python:  '3.12'
       dist:  focal
@@ -31,6 +38,7 @@ matrix:
     - python:  '3.8'
     - python:  '3.7'
     - python:  'nightly'
+    - python:  '3.13-dev'
     - python:  '3.12-dev'
     - python:  '3.11-dev'
     - python:  '3.10-dev'
