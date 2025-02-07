@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import mimetypes
 import sys
 
 from tqdm import tqdm
@@ -13,5 +12,3 @@ for i in tqdm(range(1000)):
     pass
 
 print("My PIN is 1234")
-
-print(mimetypes.guess_file_type("my.xml"))
