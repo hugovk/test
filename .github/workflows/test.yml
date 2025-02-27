@@ -37,6 +37,7 @@ jobs:
       - run: |
           echo "github.event.pull_request.head.repo.full_name: ${{ github.event.pull_request.head.repo.full_name }}"
           echo "github.repository: ${{ github.repository }}"
+          echo "github.event.repository.fork: ${{ github.event.repository.fork }}"
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
