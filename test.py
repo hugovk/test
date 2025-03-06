@@ -1,14 +1,6 @@
-#!/usr/bin/env python
-import sys
+import asyncio.windows_events
+import socket
 
-from tqdm import tqdm
-
-print(123)
-
-print(sys.version)
-print(sys.platform)
-
-for i in tqdm(range(1000)):
-    pass
-
-print("My PIN is 1234")
+ip = asyncio.windows_events.IocpProactor()
+sock = socket.socket(type=socket.SOCK_DGRAM)
+ip.connect(sock, None)
