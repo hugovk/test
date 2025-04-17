@@ -62,6 +62,7 @@ jobs:
           python test.py
           python -m pip --version
           jq --version
+          python3 -c "import platform; print(platform.machine())"
 
       - run: |
           python -m pip install uv
