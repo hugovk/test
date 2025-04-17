@@ -12,20 +12,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [
-          "pypy3.11",
-          "pypy3.10",
-          "3.13t",
-          "3.14t",
-          "3.9",
-          "3.10",
-          "3.11",
-          "3.12",
-          "3.13",
-          "3.14",
-          "3",
-          "3.x",
-        ]
+#        python-version: [
+#          "pypy3.11",
+#          "pypy3.10",
+#          "3.13t",
+#          "3.14t",
+#          "3.9",
+#          "3.10",
+#          "3.11",
+#          "3.12",
+#          "3.13",
+#          "3.14",
+#          "3",
+#          "3.x",
+#        ]
         os: [
           windows-11-arm,
           windows-latest,
@@ -42,13 +42,13 @@ jobs:
           echo "github.repository: ${{ github.repository }}"
           echo "github.event.repository.fork: ${{ github.event.repository.fork }}"
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-          allow-prereleases: true
-          cache: pip
-          cache-dependency-path: .github/workflows/test.yml
+#      - name: Set up Python ${{ matrix.python-version }}
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version: ${{ matrix.python-version }}
+#          allow-prereleases: true
+#          cache: pip
+#          cache-dependency-path: .github/workflows/test.yml
 
       - name: Install dependencies
         run: |
