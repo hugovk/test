@@ -14,6 +14,5 @@ for i in tqdm(range(1000)):
 
 print("My PIN is 1234")
 
-
 print(mimetypes.guess_type("filename.rtf", strict=False))
 print(mimetypes.guess_type("filename.rtf", strict=True))
