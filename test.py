@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 print(123)
 
-print(sys.version)
+print(sys.version_info)
 print(sys.platform)
 
 for i in tqdm(range(1000)):
