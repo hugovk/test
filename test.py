@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import mimetypes
+import os
 import sys
 
 from tqdm import tqdm
@@ -17,3 +18,5 @@ print("My PIN is 1234")
 
 print(mimetypes.guess_type("filename.rtf", strict=False))
 print(mimetypes.guess_type("filename.rtf", strict=True))
+
+print(f"{os.getpid()=}")
