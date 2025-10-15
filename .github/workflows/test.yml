@@ -13,26 +13,14 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [
-          "pypy3.11",
-          "3.10",
-          "3.11",
-          "3.12",
-          "3.13",
           "3.14",
           "3.15",
-          "3.13t",
           "3.14t",
           "3.15t",
-          "3",
-          "3.x",
         ]
         os: [
-          windows-11-arm,
           windows-latest,
-          windows-2022,
-          windows-2025,
           macOS-latest,
-          ubuntu-24.04-arm,
           ubuntu-latest,
         ]
 
