@@ -20,3 +20,7 @@ print(mimetypes.guess_type("filename.rtf", strict=False))
 print(mimetypes.guess_type("filename.rtf", strict=True))
 
 print(f"{os.getpid()=}")
+
+os.environ["monty"] = "python"
+print("MONTY" in os.environ)
+print("monty" in os.environ)
