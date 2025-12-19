@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import locale
 import mimetypes
 import os
 import sys
@@ -24,3 +25,10 @@ print(f"{os.getpid()=}")
 os.environ["monty"] = "python"
 print("MONTY" in os.environ)
 print("monty" in os.environ)
+
+print(locale.getlocale())
+print(locale.getdefaultlocale())
+
+locale.setlocale(locale.LC_CTYPE)
+print(locale.getlocale())
+print(locale.getdefaultlocale())
