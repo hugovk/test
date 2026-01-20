@@ -8,22 +8,10 @@ import timeit
 # Or ues pre-cached files from:
 # https://gist.github.com/hugovk/efdbee0620cc64df7b405b52cf0b6e42
 
-CACHE_FILE = "/tmp/bench/names.txt"
-DB_FILE = "/tmp/bench/pypi-data.sqlite"
+CACHE_FILE = "names.txt"
 
-try:
-    with open(CACHE_FILE) as f:
-        TEST_ALL_NAMES = [line.rstrip("\n") for line in f]
-except FileNotFoundError:
-    TEST_ALL_NAMES = []
-    import sqlite3
-
-    with sqlite3.connect(DB_FILE) as conn:
-        with open(CACHE_FILE, "w") as cache:
-            for (name,) in conn.execute("SELECT name FROM projects"):
-                if name:
-                    TEST_ALL_NAMES.append(name)
-                    cache.write(name + "\n")
+with open(CACHE_FILE) as f:
+    TEST_ALL_NAMES = [line.rstrip("\n") for line in f]
 
 
 _normalize_table = str.maketrans(
