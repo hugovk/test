@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v5
-      - run: mkdir -p /tmp/bench && unzip names.txt.zip -d /tmp/bench
+      - run: unzip names.txt.zip
         shell: bash
       - run: ./all.sh
         shell: bash
