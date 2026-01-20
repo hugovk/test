@@ -12,63 +12,33 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [
-          "pypy3.11",
-          "3.10",
-          "3.11",
-          "3.12",
-          "3.13",
-          "3.14",
-          "3.15",
-          "3.13t",
-          "3.14t",
-          "3.15t",
-          "3",
-          "3.x",
-        ]
         os: [
-          windows-11-arm,
           windows-latest,
-          windows-2022,
-          windows-2025,
           macOS-latest,
-          ubuntu-24.04-arm,
           ubuntu-latest,
         ]
 
     steps:
       - uses: actions/checkout@v6
-
-      - run: |
-          echo "github.event.pull_request.head.repo.full_name: ${{ github.event.pull_request.head.repo.full_name }}"
-          echo "github.repository: ${{ github.repository }}"
-          echo "github.event.repository.fork: ${{ github.event.repository.fork }}"
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v6
+      - uses: astral-sh/setup-uv@v5
+      - run: ./all.sh
+        shell: bash
+      - run: mv all.csv all-${{ matrix.os }}.csv
+        shell: bash
+      - uses: actions/upload-artifact@v4
         with:
-          python-version: ${{ matrix.python-version }}
-          allow-prereleases: true
-          cache: pip
-          cache-dependency-path: .github/workflows/test.yml
+          name: results-${{ matrix.os }}
+          path: all-${{ matrix.os }}.csv
 
-      - name: Install dependencies
-        run: |
-          python3 -m pip install -U pip
-          python3 -m pip install -U pytest
-          python3 -m pip install -U tqdm
-          python3 -m pip install -vvv coverage>=7.4.2
-
-      - name: Test
-        run: |
-          python --version --version
-          python test.py
-          python -m pip --version
-          jq --version
-          python3 -c "import platform; print(platform.machine())"
-
-      - run: |
-          python -m pip install uv
-          uv --version
-          uv venv
-          uv pip install norwegianblue --color=always
+  combine:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: results-*
+          merge-multiple: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: all-results
+          path: "*.csv"
