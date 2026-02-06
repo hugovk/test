@@ -33,8 +33,6 @@ jobs:
           windows-2025,
           macOS-latest,
           macos-26,
-          macos-26-xlarge,
-          macos-26-large,
           ubuntu-24.04-arm,
           ubuntu-latest,
         ]
