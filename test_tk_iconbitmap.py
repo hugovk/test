@@ -3,6 +3,7 @@
 https://github.com/python/cpython/issues/146531
 """
 
+import os
 import platform
 import shutil
 import subprocess
@@ -11,9 +12,34 @@ import sys
 TIMEOUT = 60
 
 
+def print_debug_info():
+    """Print platform detection values for debugging."""
+    print("=== Debug info ===")
+    print(f"platform.platform(): {platform.platform()}")
+    print(f"platform.mac_ver(): {platform.mac_ver()}")
+    print(f"platform.machine(): {platform.machine()}")
+    print(f"sys.platform: {sys.platform}")
+    print(f"os.uname(): {os.uname()}")
+    try:
+        result = subprocess.run(
+            ["sw_vers", "--productVersion"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        print(f"sw_vers --productVersion: {result.stdout.strip()}")
+    except FileNotFoundError:
+        print("sw_vers: not found")
+    print(
+        "MACOSX_DEPLOYMENT_TARGET: "
+        f"{os.environ.get('MACOSX_DEPLOYMENT_TARGET', 'not set')}"
+    )
+    print("==================")
+
+
 def test_wish_iconbitmap():
     """Test wm iconbitmap via wish (pure Tk, no Python)."""
-    print(f"Platform: {platform.platform()}")
+    print_debug_info()
     print(f"Python: {sys.version}")
 
     wish = shutil.which("wish")
