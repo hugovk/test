@@ -5,6 +5,8 @@
 
 :Editor: Hugo van Kemenade
 
+hi! edit in GH UI
+
 .. Rules for maintenance:
 
    * Anyone can add text to this document.  Do not spend very much time
