@@ -3,9 +3,9 @@
   What's new in Python 3.15
 ****************************
 
-:Editor: Hugo van Kemenade
+hi! resolved
 
-hi! edit on feature branch 2 (top)
+:Editor: Hugo van Kemenade
 
 .. Rules for maintenance:
 
@@ -1086,11 +1086,11 @@ ssl
 
 * Added a new method :meth:`ssl.SSLContext.set_ciphersuites` for setting TLS 1.3
   ciphers. For TLS 1.2 or earlier, :meth:`ssl.SSLContext.set_ciphers` should
+  Resolved.
   continue to be used. Both calls can be made on the same context and the
   selected cipher suite will depend on the TLS version negotiated when a
   connection is made.
   (Contributed by Ron Frederick in :gh:`137197`.)
-  Feature branch 2 edit (middle).
 
 * Added new methods for managing signature algorithms:
 
@@ -2181,5 +2181,5 @@ that may require changes to your code.
   Pass a new argument ``padded=True`` or use :func:`base64.b64decode`
   with argument ``altchars=b'-_'`` (this works with older Python versions)
   to make padding required.
-  Feature branch 2 edit (bottom).
+  Resolved.
   (Contributed by Serhiy Storchaka in :gh:`73613`.)
