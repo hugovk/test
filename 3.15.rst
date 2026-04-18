@@ -5,7 +5,7 @@
 
 :Editor: Hugo van Kemenade
 
-hi! edit in GH UI
+hi! edit on main branch
 
 .. Rules for maintenance:
 
