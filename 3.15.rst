@@ -5,7 +5,7 @@
 
 :Editor: Hugo van Kemenade
 
-hi! edit on main branch
+hi! edit on feature branch 2 (top)
 
 .. Rules for maintenance:
 
@@ -1090,6 +1090,7 @@ ssl
   selected cipher suite will depend on the TLS version negotiated when a
   connection is made.
   (Contributed by Ron Frederick in :gh:`137197`.)
+  Feature branch 2 edit (middle).
 
 * Added new methods for managing signature algorithms:
 
@@ -2180,4 +2181,5 @@ that may require changes to your code.
   Pass a new argument ``padded=True`` or use :func:`base64.b64decode`
   with argument ``altchars=b'-_'`` (this works with older Python versions)
   to make padding required.
+  Feature branch 2 edit (bottom).
   (Contributed by Serhiy Storchaka in :gh:`73613`.)
