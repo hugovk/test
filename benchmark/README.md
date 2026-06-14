@@ -9,14 +9,14 @@ speed-up over the older `manylinux2014` image (gcc 10)?
 
 ## Committed wheels
 
-Both sets were built from the **same** ujson C source (verified: no diff in
-`lib/`, `python/`, `deps/`, `*.c`, `*.h`, `setup.py` between the two commits),
-so the only variable is the compiler toolchain.
+Both sets come from the **same CI run and commit** — the "build both variants"
+deploy now produces manylinux2014 and manylinux_2_28 wheels side by side — so
+they are guaranteed identical source and the only variable is the compiler.
 
-| dir | image | gcc | source run |
-|-----|-------|-----|------------|
-| `wheels/manylinux2014/`  | manylinux2014  | 10.2.1 | hugovk/ultrajson run 27471254973 (commit `0811ca8`) |
-| `wheels/manylinux_2_28/` | manylinux_2_28 | 14.2.1 | ultrajson/ultrajson run 27460510633 (commit `d31a7b7`) |
+| dir | image | gcc | source |
+|-----|-------|-----|--------|
+| `wheels/manylinux2014/`  | manylinux2014  | 10.2.1 | hugovk/ultrajson run 27506564289 (commit `b6a55af`) |
+| `wheels/manylinux_2_28/` | manylinux_2_28 | 14.2.1 | hugovk/ultrajson run 27506564289 (commit `b6a55af`) |
 
 CPython 3.10–3.14 (incl. free-threaded 3.14t), `x86_64` + `aarch64`.
 
