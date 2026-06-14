@@ -1,0 +1,71 @@
+---
+name: ujson manylinux toolchain benchmark
+
+# Compares ujson wheels built with the OLD manylinux2014 image (gcc 10) vs the
+# newer manylinux_2_28 image (gcc 14). Both wheel sets are committed under
+# benchmark/wheels/ and were built from the *same* ujson C source, so the only
+# difference is the compiler toolchain. See ultrajson/ultrajson#741.
+
+on:
+  push:
+    branches:
+      - ujson-manylinux-benchmark
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    name: "${{ matrix.os }} · py${{ matrix.python }}"
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm]
+        python: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.14t"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          allow-prereleases: true
+
+      - name: Benchmark both toolchains
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # ABI tag: 3.11 -> cp311-cp311 ; 3.14t -> cp314-cp314t
+          pyv="${{ matrix.python }}"
+          if [[ "$pyv" == *t ]]; then
+            xy="${pyv%t}"; xy="${xy/./}"; pytag="cp${xy}-cp${xy}t"
+          else
+            xy="${pyv/./}"; pytag="cp${xy}-cp${xy}"
+          fi
+          arch=$(uname -m)   # x86_64 or aarch64
+          echo "ABI tag: $pytag   arch: $arch"
+          gcc --version | head -1 || true
+
+          run_one () {  # $1 = image dir label, $2 = gcc label
+            local img="$1" label="$2"
+            local whl
+            whl=$(ls benchmark/wheels/"$img"/ujson-*-"$pytag"-manylinux*"$arch"*.whl)
+            echo "::group::$label  ($img)  $(basename "$whl")"
+            python -m pip install -q --force-reinstall --no-deps "$whl"
+            echo "ujson $(python -c 'import ujson; print(ujson.__version__)') from $img"
+            {
+              echo "### ${{ matrix.os }} · py${{ matrix.python }} · $label"
+              echo '```'
+              python benchmark/benchmark.py --disable orjson simplejson
+              echo '```'
+            } | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "::endgroup::"
+          }
+
+          python -m pip install -q --upgrade pip
+          run_one manylinux2014  "OLD gcc10 (manylinux2014)"
+          run_one manylinux_2_28 "NEW gcc14 (manylinux_2_28)"
